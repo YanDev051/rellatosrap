@@ -1,0 +1,736 @@
+<html lang="pt-BR"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Release Artístico — Rellatos Rap</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:ital,wght@0,400;0,500;1,400&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #0d1235;
+    --navy-dark: #090d25;
+    --yellow: #f5c800;
+    --yellow-dim: rgba(245,200,0,0.12);
+    --yellow-border: rgba(245,200,0,0.28);
+    --red: #e03030;
+    --pink: #d95fb0;
+    --text-main: #f0ead8;
+    --text-muted: #a8a090;
+    --text-dim: #706860;
+    --white: #ffffff;
+  }
+
+  body {
+    background: var(--navy);
+    color: var(--text-main);
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--navy);
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    background: var(--navy-dark);
+    border-bottom: 3px solid var(--yellow);
+    padding: 36px 48px 30px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .logo-box {
+    background: var(--navy);
+    border: 2.5px solid var(--yellow);
+    border-radius: 10px;
+    padding: 12px 18px 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+
+  .vinyl-wrap {
+    border-right: 1.5px solid var(--yellow);
+    padding-right: 14px;
+  }
+
+  .logo-text { display: flex; flex-direction: column; }
+  .logo-rellatos {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: var(--yellow);
+    letter-spacing: 2.5px;
+    line-height: 1;
+  }
+  .logo-rap {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    color: var(--yellow);
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .header-text { flex: 1; }
+  .header-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .header-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: var(--white);
+    line-height: 0.95;
+    letter-spacing: 1px;
+  }
+  .header-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== BODY ===== */
+  .body { padding: 0 48px 52px; }
+
+  /* ===== INTRO ===== */
+  .intro {
+    border-left: 4px solid var(--yellow);
+    padding: 18px 22px;
+    margin: 36px 0 10px;
+    background: var(--yellow-dim);
+    border-radius: 0 6px 6px 0;
+  }
+  .intro p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #ddd8c8;
+  }
+  .intro p + p { margin-top: 10px; }
+
+  /* ===== TAGS ===== */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0 36px;
+  }
+  .tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    border: 1px solid var(--yellow-border);
+    padding: 4px 12px;
+    border-radius: 3px;
+    background: var(--yellow-dim);
+  }
+
+  /* ===== SECTION TITLE ===== */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .section-head-line {
+    flex: 1;
+    height: 1px;
+    background: var(--yellow-border);
+  }
+  .section-head-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* ===== TIMELINE ===== */
+  .timeline { display: flex; flex-direction: column; }
+
+  .tl-year-marker {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    margin-top: 8px;
+  }
+  .tl-year-badge {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--yellow);
+    line-height: 1;
+    min-width: 68px;
+  }
+  .tl-year-rule {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--yellow-border), transparent);
+  }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 14px 1fr;
+    gap: 0 20px;
+    margin-bottom: 32px;
+    padding-left: 8px;
+  }
+
+  .tl-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4px;
+  }
+  .tl-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--yellow);
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+  }
+  .tl-vline {
+    width: 1px;
+    flex: 1;
+    background: var(--yellow-border);
+    margin-top: 4px;
+    min-height: 20px;
+  }
+
+  .tl-content {}
+  .tl-cat {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .tl-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--white);
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .tl-desc {
+    font-size: 14px;
+    line-height: 1.78;
+    color: var(--text-muted);
+  }
+  .tl-desc em {
+    font-style: italic;
+    color: #c8c0b0;
+  }
+
+  /* ===== HIGHLIGHTS BLOCK ===== */
+  .highlights {
+    margin: 44px 0 40px;
+    border: 1.5px solid var(--yellow-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .highlights-head {
+    background: var(--yellow-dim);
+    border-bottom: 1px solid var(--yellow-border);
+    padding: 12px 22px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    color: var(--yellow);
+    text-transform: uppercase;
+  }
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .hl-item {
+    padding: 20px 22px;
+    border-right: 1px solid var(--yellow-border);
+  }
+  .hl-item:last-child { border-right: none; }
+  .hl-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: var(--yellow);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hl-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  /* ===== LINKS SECTION ===== */
+  .links-section {
+    margin-top: 44px;
+    border: 1.5px solid var(--yellow-border);
+    border-radius: 8px;
+    padding: 22px 26px;
+    background: var(--yellow-dim);
+  }
+  .links-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .link-card {
+    display: block;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--yellow-border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .link-card:hover { background: rgba(245,200,0,0.12); }
+  .link-platform {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .link-url {
+    font-size: 12px;
+    color: var(--text-dim);
+    word-break: break-all;
+  }
+
+  /* ===== DIVIDER ===== */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--yellow-border);
+    margin: 8px 0 32px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    border-top: 3px solid var(--yellow);
+    background: var(--navy-dark);
+    padding: 28px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .footer-logo-box {
+    background: var(--navy);
+    border: 2px solid var(--yellow);
+    border-radius: 8px;
+    padding: 10px 16px 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .footer-vinyl-wrap {
+    border-right: 1px solid var(--yellow);
+    padding-right: 12px;
+  }
+  .footer-logo-text { display: flex; flex-direction: column; }
+  .footer-rellatos {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 19px;
+    color: var(--yellow);
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  .footer-rap {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    color: var(--yellow);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+  }
+  .footer-info { text-align: right; }
+  .footer-city {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .footer-desc {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  /* VINYL SVG component */
+  .vinyl-svg { display: block; }
+
+  @media print {
+    body { background: var(--navy); }
+    .page { max-width: 100%; }
+    .tl-item { page-break-inside: avoid; }
+    .highlights { page-break-inside: avoid; }
+    .links-section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <div class="logo-box">
+      <div class="vinyl-wrap">
+        <svg class="vinyl-svg" width="52" height="52" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="22" cy="22" r="20" fill="#0d1235"></circle>
+          <path d="M22 22 L22 2 A20 20 0 0 1 42 22 Z" fill="#e03030"></path>
+          <path d="M22 22 L42 22 A20 20 0 0 1 22 42 Z" fill="#f5c800"></path>
+          <path d="M22 22 L22 42 A20 20 0 0 1 2 22 Z" fill="#d95fb0"></path>
+          <path d="M22 22 L2 22 A20 20 0 0 1 22 2 Z" fill="#f5c800"></path>
+          <circle cx="22" cy="22" r="7" fill="#0d1235"></circle>
+          <circle cx="22" cy="22" r="2.5" fill="#f5c800"></circle>
+          <circle cx="22" cy="22" r="11.5" fill="none" stroke="rgba(245,200,0,0.18)" stroke-width="0.6"></circle>
+          <circle cx="22" cy="22" r="15.5" fill="none" stroke="rgba(245,200,0,0.12)" stroke-width="0.6"></circle>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-rellatos">RELLATOS</span>
+        <span class="logo-rap">R &nbsp; A &nbsp; P</span>
+      </div>
+    </div>
+    <div class="header-text">
+      <div class="header-eyebrow">Release Artístico Oficial</div>
+      <div class="header-name">Rellatos<br>Rap</div>
+      <div class="header-sub">Coletivo Independente · Zona Norte de Porto Alegre, RS · Desde 2020</div>
+    </div>
+  </div>
+
+  <!-- ===== BODY ===== -->
+  <div class="body">
+
+    <!-- INTRO -->
+    <div class="intro">
+      <p>O <strong>Rellatos Rap</strong> é um coletivo artístico independente formado em 2020, na zona norte de Porto Alegre (RS), com atuação voltada à música, audiovisual e ações culturais ligadas ao movimento hip hop gaúcho.</p>
+      <p>Desde sua formação, o coletivo vem desenvolvendo trabalhos autorais que abordam temas como fé, espiritualidade, identidade urbana, cotidiano da classe trabalhadora, resistência cultural e vivências sociais presentes nas comunidades da capital e região metropolitana. A proposta artística do grupo une rap, audiovisual e atuação comunitária, utilizando a arte como ferramenta de expressão, comunicação e valorização cultural.</p>
+    </div>
+
+    <div class="tags">
+      <span class="tag">Rap</span>
+      <span class="tag">Audiovisual</span>
+      <span class="tag">Hip Hop Gaúcho</span>
+      <span class="tag">Independente</span>
+      <span class="tag">Cultura Urbana</span>
+      <span class="tag">Periferia</span>
+      <span class="tag">Espiritualidade</span>
+      <span class="tag">Porto Alegre · RS</span>
+    </div>
+
+    <!-- HIGHLIGHTS -->
+    <div class="highlights">
+      <div class="highlights-head">Trajetória em Números</div>
+      <div class="highlights-grid">
+        <div class="hl-item">
+          <div class="hl-num">2</div>
+          <div class="hl-label">EPs lançados<br>(Novo Dia · Última Gota)</div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-num">9</div>
+          <div class="hl-label">Episódios do mini documentário Hip Hop RS</div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-num">5+</div>
+          <div class="hl-label">Anos de atuação independente na cena gaúcha</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: TRAJETÓRIA -->
+    <div class="section-head">
+      <div class="section-head-line"></div>
+      <div class="section-head-label">Trajetória Cronológica</div>
+      <div class="section-head-line"></div>
+    </div>
+
+    <div class="timeline">
+
+      <!-- 2020 -->
+      <div class="tl-year-marker">
+        <div class="tl-year-badge">2020</div>
+        <div class="tl-year-rule"></div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Formação</div>
+          <div class="tl-title">Fundação do Coletivo Rellatos Rap</div>
+          <div class="tl-desc">O Rellatos Rap nasce na zona norte de Porto Alegre como coletivo artístico independente com foco em música, audiovisual e ações culturais vinculadas ao movimento hip hop gaúcho. Desde sua formação, os trabalhos autorais do grupo abordam fé, espiritualidade, identidade urbana, cotidiano da classe trabalhadora, resistência cultural e vivências sociais presentes nas comunidades da capital e região metropolitana.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Discografia</div>
+          <div class="tl-title">EP Novo Dia</div>
+          <div class="tl-desc">Lançamento do EP <em>Novo Dia</em>, projeto que marca uma nova fase artística do grupo. A obra traz reflexões sobre esperança, superação e espiritualidade diante dos desafios da vida contemporânea, consolidando a identidade musical do coletivo e seu olhar sobre as vivências urbanas.</div>
+        </div>
+      </div>
+
+      <!-- 2025 -->
+      <div class="tl-year-marker" style="margin-top: 12px;">
+        <div class="tl-year-badge">2025</div>
+        <div class="tl-year-rule"></div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Discografia</div>
+          <div class="tl-title">EP Última Gota</div>
+          <div class="tl-desc">O grupo lança o EP <em>Última Gota</em>, trabalho com temática reflexiva voltada às escolhas da vida, fé e consequências sociais enfrentadas pela juventude das periferias urbanas. O projeto aprofunda a linguagem artística do coletivo e amplia seu alcance dentro da cena hip hop gaúcha.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Audiovisual</div>
+          <div class="tl-title">Videoclipe Hip Hop</div>
+          <div class="tl-desc">Lançamento do videoclipe da música <em>Hip Hop</em>, obra audiovisual que retrata o impacto da cultura hip hop nas comunidades e a influência desse movimento na trajetória pessoal e artística dos integrantes do coletivo.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Audiovisual — Mini Documentário</div>
+          <div class="tl-title">9 Episódios sobre a Cena Hip Hop do RS</div>
+          <div class="tl-desc">O projeto audiovisual foi ampliado através de um mini documentário dividido em nove episódios, registrando memórias, experiências e agentes culturais importantes da cena hip hop do Rio Grande do Sul. Entre os episódios produzidos, destacam-se as gravações realizadas com <em>Luciano Marino, B.boy e Educador Social no CESMAR</em>, além das gravações realizadas no Beco do Graffiti com <em>Diana Caicedo e Tiago Santos</em>, líderes e fundadores do Coletivo Abrigo.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Patrimônio e Memória Cultural</div>
+          <div class="tl-title">Proposta ao Museu do Hip Hop RS</div>
+          <div class="tl-desc">Foi encaminhada ao Museu do Hip Hop RS uma proposta de exibição do videoclipe da música <em>Hip Hop</em>, visando disponibilizar a obra como material de apoio às ações de preservação, memória e valorização da história do hip hop no estado. Atualmente, a proposta encontra-se em avaliação pela equipe curatorial da instituição.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Ação Cultural — Arte Urbana</div>
+          <div class="tl-title">Reinauguração do Beco do Graffiti · ExpoFavela</div>
+          <div class="tl-desc">O grupo participou da reinauguração do Beco do Graffiti, ação cultural descentralizada vinculada à ExpoFavela, contribuindo para a valorização da arte urbana e da ocupação cultural dos espaços públicos da cidade.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Audiovisual — Território</div>
+          <div class="tl-title">Videoclipe Jogador — Cohab Rubem Berta</div>
+          <div class="tl-desc">O coletivo realizou as gravações do videoclipe da música <em>Jogador</em> (versão original) na Cohab Rubem Berta, em Porto Alegre. O projeto utiliza o futebol como representação simbólica das vivências da juventude das comunidades urbanas e contou com a participação da <em>Escolinha Águia Negra</em>, aproximando esporte, música e cultura em uma produção realizada dentro do próprio território.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Shows e Apresentações</div>
+          <div class="tl-title">Quintal Cultural — Dezembro de 2025</div>
+          <div class="tl-desc">O grupo realizou apresentação no Quintal Cultural em dezembro de 2025, ampliando sua atuação em espaços independentes de cultura da região metropolitana de Porto Alegre e fortalecendo o contato direto com o público através da música e do intercâmbio artístico.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Shows e Apresentações</div>
+          <div class="tl-title">Casa de Praia BoomBap + Convite para Hip Hop TV (TVE RS)</div>
+          <div class="tl-desc">O grupo se apresentou no evento <em>Casa de Praia BoomBap</em>, realizado pelo Esquadrão BoomBap em parceria com DJ Ita. A partir dessa apresentação, o coletivo foi convidado para participar do programa <em>Hip Hop TV</em>, exibido pela TVE RS, ampliando a visibilidade do trabalho desenvolvido dentro da cena cultural gaúcha.</div>
+        </div>
+      </div>
+
+      <!-- 2026 -->
+      <div class="tl-year-marker" style="margin-top: 12px;">
+        <div class="tl-year-badge">2026</div>
+        <div class="tl-year-rule"></div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Shows e Apresentações</div>
+          <div class="tl-title">Quintal Cultural — Março de 2026</div>
+          <div class="tl-desc">O coletivo retorna ao Quintal Cultural em março de 2026, consolidando sua presença em espaços independentes de cultura e mantendo o vínculo com o público da região metropolitana de Porto Alegre através de apresentações ao vivo e intercâmbio artístico.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Ação Cultural Comunitária</div>
+          <div class="tl-title">Ação de Páscoa no Bairro Timbaúva</div>
+          <div class="tl-desc">O grupo realizou uma ação cultural de Páscoa na comunidade do bairro Timbaúva, a convite da <em>Família Brimos</em>, promovendo integração social, acesso à cultura e aproximação com crianças, jovens e famílias da comunidade local. A iniciativa reforça o compromisso do coletivo com a atuação comunitária para além dos palcos.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Discografia</div>
+          <div class="tl-title">Single Jogador Remix — Março de 2026</div>
+          <div class="tl-desc">Em março de 2026, o grupo lançou o single <em>Jogador Remix</em>, faixa que utiliza a linguagem do futebol como metáfora para retratar os desafios da vida cotidiana do trabalhador brasileiro, abordando persistência, pressão social e sobrevivência nas grandes cidades. O lançamento amplia o alcance do projeto iniciado com o videoclipe original gravado na Cohab Rubem Berta.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Mídia — Televisão</div>
+          <div class="tl-title">Jornal do Almoço · RBS TV — Festival Alvo Cultural 21 Anos</div>
+          <div class="tl-desc">O grupo apareceu em reportagem exibida no <em>Jornal do Almoço</em>, da RBS TV, durante matéria sobre o festival de 21 anos da Alvo Cultural. Na reportagem, foram exibidas imagens de um ensaio do grupo realizado no espaço disponibilizado pela instituição para artistas independentes, destacando a importância desses ambientes culturais para o desenvolvimento do hip hop no estado.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Ação Cultural</div>
+          <div class="tl-title">Inauguração das Oficinas — Casa do Hip Hop Rubem Berta</div>
+          <div class="tl-desc">O grupo participou do ato de inauguração das oficinas da <em>Casa do Hip Hop Rubem Berta</em>, evento que contou com a presença de nomes importantes da cultura hip hop como <em>Crônica Mendes, V.Negão e Tom Calvário</em>. A participação reforça o papel do coletivo como agente ativo na construção e fortalecimento dos espaços culturais da periferia de Porto Alegre.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Formação e Colaboração</div>
+          <div class="tl-title">Ensaios Abertos Gratuitos — Casa do Hip Hop Rubem Berta</div>
+          <div class="tl-desc">Em parceria com a Casa do Hip Hop Rubem Berta, o coletivo vem organizando ensaios abertos gratuitos em sextas-feiras alternadas, disponibilizando estrutura profissional de som e espaço cultural para MCs da zona norte de Porto Alegre desenvolverem seus trabalhos autorais. A iniciativa busca incentivar novos artistas da cena local, ampliar o acesso à produção musical independente e criar um ambiente colaborativo de troca artística e formação cultural.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Cena Underground</div>
+          <div class="tl-title">Mande Sua Rima — Alvo Cultural</div>
+          <div class="tl-desc">Dentro da cena independente, o coletivo participou do projeto <em>Mande Sua Rima</em>, realizado pela Alvo Cultural, iniciativa que reúne MCs em performances sobre produções do beatmaker <em>Jay Gueto</em>. A participação reafirma a presença do grupo nos principais projetos de valorização do rap underground gaúcho.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Cena Underground — Maio de 2026</div>
+          <div class="tl-title">Cypher Anonimato — MC Lodi</div>
+          <div class="tl-desc">Em maio de 2026, o grupo integrou o projeto <em>Cypher Anonimato</em>, idealizado pelo MC Lodi, iniciativa voltada à valorização do rap underground gaúcho e de artistas independentes que desenvolvem seus trabalhos de forma autônoma, mantendo ativa a produção cultural local mesmo diante da ausência de patrocínio e estrutura comercial.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Shows e Apresentações — Maio de 2026</div>
+          <div class="tl-title">Igreja Amor e Graça — Rap, Rock e Nu Metal</div>
+          <div class="tl-desc">Em maio de 2026, o coletivo realizou uma apresentação musical na <em>Igreja Amor e Graça</em>, levando ao público um repertório com influências de rap, rock e nu metal, conectando música, espiritualidade e expressão artística contemporânea. A apresentação demonstra a versatilidade do grupo e sua proposta de aproximar a arte de diferentes comunidades e contextos.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-cat">Coletânea e Colaborações</div>
+          <div class="tl-title">Coletânea Musical · Cypher com Mano Fler — Casa do Hip Hop Rubem Berta</div>
+          <div class="tl-desc">Em parceria com a Casa do Hip Hop Rubem Berta, o grupo integra uma coletânea musical colaborativa da instituição, incluindo participação em uma cypher produzida em parceria com <em>Mano Fler</em>. O projeto reforça o compromisso do coletivo com a construção coletiva da cena hip hop gaúcha e o fortalecimento das redes de colaboração entre artistas independentes.</div>
+        </div>
+      </div>
+
+    </div><!-- end timeline -->
+
+    <!-- CLOSING STATEMENT -->
+    <div class="intro" style="margin-top: 44px;">
+      <p>O <strong>Rellatos Rap</strong> vem consolidando sua trajetória através da música, do audiovisual e de ações culturais voltadas à valorização do hip hop gaúcho. Com atuação independente, o coletivo busca construir trabalhos conectados à realidade urbana, às vivências comunitárias e à formação de novos artistas, utilizando a arte como ferramenta de expressão, memória e fortalecimento cultural.</p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="links-section">
+      <div class="links-title">Ouça, Assista e Acompanhe</div>
+      <div class="links-grid">
+        <a class="link-card" href="https://youtube.com/@rellatosrap?si=UWBT3BGsrgt-6bmg" target="_blank">
+          <div class="link-platform">YouTube</div>
+          <div class="link-url">youtube.com/@rellatosrap</div>
+        </a>
+        <a class="link-card" href="https://open.spotify.com/intl-pt/artist/0OOScUe61YEMbaUxWOo68H?si=zC5gNmT5Rg2SF_mMYCa1zA" target="_blank">
+          <div class="link-platform">Spotify</div>
+          <div class="link-url">Rellatos Rap no Spotify</div>
+        </a>
+        <a class="link-card" href="https://drive.google.com/drive/folders/1Pj9izrkH8yli8Npag_aiRd9ucL7yoYy4?usp=drive_link" target="_blank">
+          <div class="link-platform">Press Kit · Drive</div>
+          <div class="link-url">Material de imprensa e fotos</div>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- end body -->
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer">
+    <div class="footer-logo-box">
+      <div class="footer-vinyl-wrap">
+        <svg class="vinyl-svg" width="40" height="40" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="22" cy="22" r="20" fill="#0d1235"></circle>
+          <path d="M22 22 L22 2 A20 20 0 0 1 42 22 Z" fill="#e03030"></path>
+          <path d="M22 22 L42 22 A20 20 0 0 1 22 42 Z" fill="#f5c800"></path>
+          <path d="M22 22 L22 42 A20 20 0 0 1 2 22 Z" fill="#d95fb0"></path>
+          <path d="M22 22 L2 22 A20 20 0 0 1 22 2 Z" fill="#f5c800"></path>
+          <circle cx="22" cy="22" r="7" fill="#0d1235"></circle>
+          <circle cx="22" cy="22" r="2.5" fill="#f5c800"></circle>
+        </svg>
+      </div>
+      <div class="footer-logo-text">
+        <span class="footer-rellatos">RELLATOS</span>
+        <span class="footer-rap">R &nbsp; A &nbsp; P</span>
+      </div>
+    </div>
+    <div class="footer-info">
+      <div class="footer-city">Porto Alegre · RS · Brasil</div>
+      <div class="footer-desc">Coletivo Artístico Independente · Hip Hop Gaúcho<br>Música · Audiovisual · Ação Cultural · Desde 2020</div>
+    </div>
+  </div>
+
+</div>
+
+
+</body></html>
